@@ -1,10 +1,11 @@
 class RestaurantListsController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   def index
-    p current_user
     restaurant_lists = RestaurantList.all
+    # list_names = UserList.list_name
     render json: restaurant_lists
+    # render json: list_names
   end
 
   def show
