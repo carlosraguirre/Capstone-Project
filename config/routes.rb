@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get "/restaurants" => "restaurants#index"
 
   post "/user_lists" => "user_lists#create"
-  get "/user_lists" => "user_lists#create"
+  get "/user_lists" => "user_lists#index"
 
 end
