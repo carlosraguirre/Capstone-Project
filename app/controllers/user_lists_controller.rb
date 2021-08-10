@@ -11,4 +11,9 @@ class UserListsController < ApplicationController
       render json: {error: user_list.errors.full_messages}, status: :unprocessable_entity
     end
   end
+
+  def index
+    user_lists = UserList.all
+    render json: user_lists
+  end
 end
