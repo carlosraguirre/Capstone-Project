@@ -3,9 +3,7 @@ class RestaurantListsController < ApplicationController
 
   def index
     restaurant_lists = RestaurantList.all
-    # list_names = UserList.list_name
     render json: restaurant_lists
-    # render json: list_names
   end
 
   def show

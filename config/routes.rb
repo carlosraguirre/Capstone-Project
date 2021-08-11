@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "/restaurants/:id" => "restaurants#show"
   get "/restaurants" => "restaurants#index"
+  post "/restaurants" => "restaurants#create"
 
   post "/user_lists" => "user_lists#create"
   get "/user_lists" => "user_lists#index"
