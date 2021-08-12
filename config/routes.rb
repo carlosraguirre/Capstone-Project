@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/restaurants/" => "restaurants#index"
   post "/restaurants" => "restaurants#create"
 
-  post "/user_lists" => "user_lists#create"
-  get "/user_lists" => "user_lists#index"
+  post "/list_names" => "list_names#create"
+  get "/list_names" => "list_names#index"
 
 end

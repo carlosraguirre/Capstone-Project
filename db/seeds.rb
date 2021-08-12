@@ -8,30 +8,26 @@
 
 p "Creating user"
 User.create!([
-  {first_name: "Carlos", last_name: "Aguirre", email: "car@los.com"},
+  {name: "Carlos Aguirre", email: "car@los.com", password_digest: "password"}
 ])
-p "creating"
-UserList.create!([
-  {user_id: 1, list_name: "favorite restaurants"},
-  {user_id: 1, list_name: "breakfast"},
-  {user_id: 2, list_name: "lunch"},
-  {user_id: 3, list_name: "dinner"}
+
+p "creating list names"
+ListName.create!([
+  {list_name: "favorite restaurants"},
+  {list_name: "breakfast"}
 ])
-Cuisine.create!([
-  {cuisine: "French"},
-  {cuisine: "Spanish"},
-  {cuisine: "Coffee Shop"},
-  {cuisine: "Peruvian"},
-  {cuisine: "Caribbean"},
-  {cuisine: "Italian"},
-  {cuisine: "Bakery"}
-])
-Restaurant.create!([
-  {restaurant_name: "Le Diplomate", cuisine_id: 1},
-  {restaurant_name: "Barcelona Wine Bar", cuisine_id: 2},
-  {restaurant_name: "Bluestone Lane Logan Circle Cafe", cuisine_id: 3},
-  {restaurant_name: "Chicken + Whiskey", cuisine_id: 4},
-  {restaurant_name: "Colada Shop", cuisine_id: 5},
-  {restaurant_name: "Floriana", cuisine_id: 6},
-  {restaurant_name: "Tatte Bakery & Cafe", cuisine_id: 7}
-])
+
+# p "creating restaurant lists"
+# RestaurantList.create!([
+#   {}
+# ])
+# p "creating cuisines"
+# Cuisine.create!([
+#   {cuisine: "French"},
+#   {cuisine: "Spanish"},
+#   {cuisine: "Coffee Shop"},
+#   {cuisine: "Peruvian"},
+#   {cuisine: "Caribbean"},
+#   {cuisine: "Italian"},
+#   {cuisine: "Bakery"}
+# ])
