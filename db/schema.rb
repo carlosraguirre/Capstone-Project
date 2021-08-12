@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_000736) do
+ActiveRecord::Schema.define(version: 2021_08_12_210253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,15 @@ ActiveRecord::Schema.define(version: 2021_07_30_000736) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "list_names", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "list_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "restaurant_lists", force: :cascade do |t|
-    t.integer "user_list_id"
+    t.integer "list_name_id"
     t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,13 +38,6 @@ ActiveRecord::Schema.define(version: 2021_07_30_000736) do
   create_table "restaurants", force: :cascade do |t|
     t.string "restaurant_name"
     t.integer "cuisine_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_lists", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "list_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

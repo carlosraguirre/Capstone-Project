@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/restaurant_lists" => "restaurant_lists#create"
 
   get "/restaurants/:id" => "restaurants#show"
-  get "/restaurants" => "restaurants#index"
+  get "/restaurants/" => "restaurants#index"
   post "/restaurants" => "restaurants#create"
 
   post "/user_lists" => "user_lists#create"

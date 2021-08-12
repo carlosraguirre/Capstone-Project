@@ -7,14 +7,10 @@ class RestaurantsController < ApplicationController
   end
 
   def index
+    # limit = 20
+    # offset = (params[:page_number].to_i - 1) * 10
     response = HTTP.get("https://api.documenu.com/v2/restaurants/state/DC?key=#{Rails.application.credentials.DOCUMENU_API_KEY}")
- 
-    render json: response.parse(:json)
-    # restaurants = response.parse(:json)
-    # restaurant_names = restaurants{'data'}
-    # p restaurant_names
 
+    render json: response.parse(:json)
   end
 end
-
-# EDITOR="code --wait" rails credentials:edit
