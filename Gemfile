@@ -42,3 +42,5 @@ gem 'jwt'
 gem 'active_model_serializers'
 
 gem 'http'
+
+gem 'rest-client', '~> 2.1'
