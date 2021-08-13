@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p "Creating user"
-User.create!([
-  {name: "Carlos Aguirre", email: "car@los.com", password_digest: "password"}
-])
+# p "Creating user"
+# User.create!([
+#   {name: "Carlos Aguirre", email: "car@los.com", password_digest: "password"}
+# ])
 
-p "creating list names"
-ListName.create!([
-  {list_name: "favorite restaurants"},
-  {list_name: "breakfast"}
-])
+# p "creating list names"
+# ListName.create!([
+#   {list_name: "favorite restaurants"},
+#   {list_name: "breakfast"}
+# ])
 
 # p "creating restaurant lists"
 # RestaurantList.create!([
