@@ -32,36 +32,40 @@
 #   {cuisine: "Bakery"}
 # ])
 
-# index = 1
-# while index < 35
-#   p Restaurant.count
-#   response = HTTP.get("https://api.documenu.com/v2/restaurants/state/DC?key=#{Rails.application.credentials.DOCUMENU_API_KEY}&size=100&page=#{index}")
+index = 1
+while index < 35
+  p Restaurant.count
+  response = HTTP.get("https://api.documenu.com/v2/restaurants/state/DC?key=#{Rails.application.credentials.DOCUMENU_API_KEY}&size=100&page=#{index}")
   
-#   restaurants = response.parse(:json)["data"]
+  restaurants = response.parse(:json)["data"]
   
-#   restaurants.each do |restaurant|
-#     p restaurant
-#     Restaurant.create!(
-#       restaurant_name: restaurant["restaurant_name"],
-#       address: restaurant["address"]["formatted"]
-#     )
-#     p ""
-#   end
-#   p Restaurant.count
-#   index += 1
-# end
-
-p Restaurant.count
-response = HTTP.get("https://api.documenu.com/v2/restaurants/state/DC?key=#{Rails.application.credentials.DOCUMENU_API_KEY}&size=2")
-
-restaurants = response.parse(:json)["data"]
-
-restaurants.each do |restaurant|
-  p restaurant
-  Restaurant.create!(
-    restaurant_name: restaurant["restaurant_name"],
-    address: restaurant["address"]["formatted"]
-  )
-  p ""
+  restaurants.each do |restaurant|
+    p restaurant
+    Restaurant.create!(
+      restaurant_name: restaurant["restaurant_name"],
+      address: restaurant["address"]["formatted"],
+      latitude: restaurant["geo"]["lat"],
+      longitude: restaurant["geo"]["lon"]
+    )
+    p ""
+  end
+  p Restaurant.count
+  index += 1
 end
-p Restaurant.count
+
+# p Restaurant.count
+# response = HTTP.get("https://api.documenu.com/v2/restaurants/state/DC?key=#{Rails.application.credentials.DOCUMENU_API_KEY}&size=2")
+
+# restaurants = response.parse(:json)["data"]
+
+# restaurants.each do |restaurant|
+#   p restaurant
+#   Restaurant.create!(
+#     restaurant_name: restaurant["restaurant_name"],
+#     address: restaurant["address"]["formatted"],
+#     latitude: restaurant["geo"]["lat"],
+#     longitude: restaurant["geo"]["lon"]
+#   )
+#   p ""
+# end
+# p Restaurant.count
