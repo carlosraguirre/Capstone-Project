@@ -13,7 +13,7 @@ class RestaurantListsController < ApplicationController
 
   def create
     restaurant_list = RestaurantList.new(
-      user_list_id: params[:user_list_id],
+      list_name_id: params[:list_name_id],
       restaurant_id: params[:restaurant_id]
     )
     if restaurant_list.save
