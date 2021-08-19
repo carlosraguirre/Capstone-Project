@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   post "/list_names" => "list_names#create"
   get "/list_names" => "list_names#index"
+  get "/list_names/:id" => "list_names#show"
 
 end

@@ -16,4 +16,9 @@ class ListNamesController < ApplicationController
     list_names = ListName.all
     render json: list_names
   end
+
+  def show
+    list_name = ListName.find_by(id: params[:id])
+    render json: list_name
+  end
 end
