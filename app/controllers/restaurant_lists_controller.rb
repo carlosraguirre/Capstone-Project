@@ -22,4 +22,11 @@ class RestaurantListsController < ApplicationController
       render json: {error: restaurant_list.errors.full_messages}, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    restaurant_list = RestaurantList.find_by(id: params[:id])
+
+    restaurant_list.destroy
+    render json: restaurant_list
+  end
 end

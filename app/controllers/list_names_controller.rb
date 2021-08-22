@@ -21,4 +21,12 @@ class ListNamesController < ApplicationController
     list_name = ListName.find_by(id: params[:id])
     render json: list_name
   end
+
+  def destroy
+    list_name = ListName.find_by(id: params[:id])
+
+    list_name.destroy
+    render json: list_name
+  end
+
 end
