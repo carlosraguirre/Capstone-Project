@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # p "Creating user"
-User.create!([
-  {name: "Carlos Aguirre", email: "car@los.com", password_digest: "password"}
-])
+# User.create!([
+#   {name: "Carlos Aguirre", email: "car@los.com", password_digest: "password"}
+# ])
 
 # p "creating list names"
 ListName.create!([
